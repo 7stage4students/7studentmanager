@@ -1,0 +1,29 @@
+{
+  "name": "7Attendance",
+  "version": "1.0.0",
+  "description": "This is an Attendance Statistics records website with an admin section and User section made in  ### Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sedoid/7Attendance.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sedoid/7Attendance/issues"
+  },
+  "homepage": "https://github.com/Sedoid/7Attendance#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "formidable": "^1.2.2",
+    "moment": "^2.26.0",
+    "nodemon": "^2.0.4"
+  }
+}
