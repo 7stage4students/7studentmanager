@@ -94,7 +94,43 @@
     margin-bottom: -15%;
     color: #495057;
 }
+.link:hover{
+    background-color: chocolate;
+    border-radius: 50px;
+}
  a .href{
     text-decoration: none;
     color: #fff;
  }
+
+ /* for the landing page */
+
+ .img {
+    width: 200px;
+    height: 50px;
+  }
+
+  body {
+      background-color: #00ab9f;
+  }
+  .cards {
+      padding-top: 50px;
+      margin-top: 20px;
+  }
+  .mtt{
+      margin-top: 150px;
+      text-align: center;
+      font-style: italic;
+  }
+  .card{
+      padding-bottom: 50px;
+      
+  }
+  .card:hover{
+      background-color: darkgray;
+      box-shadow: lightslategray;
+  }
+  /* .arrange{
+      margin-top: 50px;
+      padding-top: 200px;
+  } */
