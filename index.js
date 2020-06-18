@@ -21,5 +21,5 @@ app.get('/login', (req, res) => {
 });
 
 app.listen(8080,()=>{
-    console.log('Server is running on Port 8080');
+    console.log('Server is running on http://127.0.0.1:8080');
 })
