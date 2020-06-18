@@ -94,3 +94,7 @@
     margin-bottom: -15%;
     color: #495057;
 }
+ a .href{
+    text-decoration: none;
+    color: #fff;
+ }
