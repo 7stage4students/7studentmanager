@@ -1,3 +1,8 @@
+body {
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+}
 .register{
     background: -webkit-linear-gradient(left, #00ab9f, #52898b);
     margin-top: 3%;
@@ -123,8 +128,8 @@
     text-align: center;
     color: white;
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
-   
   }
+
   /* Centered text */
 
   .arrange-text{
