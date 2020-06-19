@@ -24,7 +24,7 @@ app.get('/',(req, res)=>{
     res.render('register');
 });
 app.get('/login', (req, res) => {
-    res.render('login');
+    res.render('student_login');
 });
 app.get('/admin_login', (req, res)=>{
     res.render('admin_login')
