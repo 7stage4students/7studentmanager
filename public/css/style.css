@@ -97,6 +97,7 @@
 .link:hover{
     background-color: chocolate;
     border-radius: 50px;
+    color : white
 }
  a .href{
     text-decoration: none;
@@ -107,50 +108,66 @@
 
  .img {
     width: 200px;
-    height: 50px;
-  }
-
-  body {
-      background-color: #00ab9f;
-  }
-  .cards {
-      padding-top: 50px;
-      margin-top: 20px;
-  }
-  .mtt{
-      margin-top: 150px;
-      text-align: center;
-      font-style: italic;
-  }
-  .card{
-      padding-bottom: 50px;
-      
-  }
-  .group-card {
-      background-color: orange;
+    height: 70px;
   }
   span {
     font-style: italic;
+  }
+  .btns{
+      border-radius: 50px;
+  }
 
+  /* Container holding the image and the text */
+.contain {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+   
   }
-  .ml1 {
-    margin-left: 60px;
-  }
-  .ml2{
-      margin-left: 60px;
+  /* Centered text */
 
+  .arrange-text{
+      font-weight: 900;
+      font-size: 68px;
+      color: white;
   }
-  .ml3{
-      margin-left: 60px;
+
+  .home-overlay {
+      background-color: rgba(0,0,0,0.3);
+      width: 100%;;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0.1;
   }
-  .ml4 {
-      margin-left: 60px;
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    transform: translate(-50%, -50%);
   }
-  .card:hover{
-      background-color: darkgray;
-      box-shadow: lightslategray;
+  .btn1 {
+      background-color: steelblue;
+      color: white;
+      margin-right: 50px;
+      font-size: 20px;
+      margin-top: 40px;
+      font-weight: 900;
+      border-radius: 50px;
   }
-  /* .arrange{
-      margin-top: 50px;
-      padding-top: 200px;
-  } */
+  .btn2 {
+    background-color: orange;
+    color: white;
+    margin-left: 50px;
+    font-size: 20px;
+    margin-top: 40px;
+    border-radius: 50px;
+    font-weight: 900;
+}
+
+
+ 
+ 
