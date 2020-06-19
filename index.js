@@ -12,7 +12,8 @@ app.set('view engine','handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/admin', adminManager);
+///TODO check routers
+// app.use('/admin', adminManager);
 
 
 app.get('/',(req, res)=>{
@@ -25,6 +26,21 @@ app.get('/login', (req, res) => {
     res.render('login');
 });
 
+app.get('/admin', (req, res)=>{
+    res.render('admin_dashboard/admin');
+});
+app.get('/admin/students', (req, res)=>{
+    res.render('Admin_Dashboard/students');
+});
+app.get('/admin/course', (req, res)=>{
+    res.render('Admin_Dashboard/course');
+});
+app.get('/admin/attendance', (req, res)=>{
+    res.render('Admin_Dashboard/attendance');
+});
+app.get('/admin/edit', (req, res)=>{
+    res.render('Admin_Dashboard/edit');
+});
 app.listen(8080,()=>{
     console.log('Server is running on http://127.0.0.1:8080');
 })

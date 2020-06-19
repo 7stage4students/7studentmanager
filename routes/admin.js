@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res)=>{
-    res.render('Admin_Dashboard/admin');
+router.get('/admin', (req, res)=>{
+    res.send('admin_dashboard/admin');
 });
 router.get('/students', (req, res)=>{
     res.render('Admin_Dashboard/students');
