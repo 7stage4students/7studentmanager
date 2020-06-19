@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/',(req, res)=>{
     res.render('index');
 })
-app.get('/register', (req, res)=>{
+ app.get('/register', (req, res)=>{
     res.render('register');
 });
 app.get('/login', (req, res) => {
@@ -49,5 +49,5 @@ app.get('/admin/edit', (req, res)=>{
     res.render('Admin_Dashboard/edit');
 });
 app.listen(8080,()=>{
-    console.log('Server is running on http://127.0.0.1:8080');
+    console.log('Server is running on http://127.0.1.1:8080');
 })
