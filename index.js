@@ -19,6 +19,12 @@ app.get('/register', (req, res)=>{
 app.get('/login', (req, res) => {
     res.render('login');
 });
+app.get('/admin_login', (req, res)=>{
+    res.render('admin_login')
+});
+app.get('/admin_landing', (req, res)=>{
+    res.render('admin_landing')
+})
 
 app.listen(8080,()=>{
     console.log('Server is running on http://127.0.0.1:8080');

@@ -126,6 +126,27 @@
       padding-bottom: 50px;
       
   }
+  .group-card {
+      background-color: orange;
+  }
+  span {
+    background-color: #00ab9f;
+    font-style: italic;
+
+  }
+  .ml1 {
+    margin-left: 60px;
+  }
+  .ml2{
+      margin-left: 60px;
+
+  }
+  .ml3{
+      margin-left: 60px;
+  }
+  .ml4 {
+      margin-left: 60px;
+  }
   .card:hover{
       background-color: darkgray;
       box-shadow: lightslategray;
