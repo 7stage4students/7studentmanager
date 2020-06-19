@@ -7,7 +7,7 @@
     <title>Admin Area | course</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
     <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
   </head>
   <body>
@@ -18,7 +18,11 @@
           <div class="container">
             <div class="row">
               <div class="col-md-10">
-                <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>ADMIN <small>Manage Courses</small></h1>
+                <h1 class="text-color">
+                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                   <strong class="text-color"> ADMIN: </strong>
+                   <small>Manage Courses</small>
+                </h1>
               </div>
               <div class="col-md-2">
                 
@@ -26,15 +30,15 @@
               </div>
             </div>
           </div>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          {{!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+          </button> --}}
           <!-- <a class="navbar-brand" href="#">AdminStrap</a> -->
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        {{!-- <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/admin">Dashboard</a></li>
             <li><a href="admin/students">Students</a></li>
@@ -42,7 +46,7 @@
             <li><a href="admin/attendance">Attendance</a></li>
           </ul>
           
-        </div><!--/.nav-collapse -->
+        </div><!--/.nav-collapse --> --}}
       </div>
     </nav>
 
@@ -113,7 +117,7 @@
                       </tr>
                       
                     </table>
-                    <button><a class="m-3 btn btn-success" href="admin/edit">add Courses</a></button>
+                    <button><a class="m-3 btn btn-success" href="/#">add Courses</a></button>
               </div>
               </div>
 
