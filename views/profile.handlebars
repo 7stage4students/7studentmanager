@@ -1,7 +1,190 @@
-{{> header}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Area | Pages</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../public/student/css/bootstrap.min.css" rel="stylesheet">
+    {{!-- <link href="css/style.css" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="../public/student/css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
+  </head>
+  <body>
 
-<div class="container">
-  <h1> User Profile page</h1>  
-</div>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-md-8 ali">
+            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> student seven  </h1>
+          </div>
+          
+        </div>
 
-{{> footer}}
+          <nav class="navbar navbar-expand-lg navbar-light ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            
+           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+         <li class="nav-item active">
+             <a class="nav-link text-light" href="student">Home <span class="sr-only">(current)</span></a>
+           </li>
+             <li class="nav-item">
+             <a class="nav-link text-light" href="profile">Profile</a>
+         </li>
+           <li class="nav-item ">
+           <a class="nav-link  text-light" href="profile">Attendance</a>
+         </li>
+         </li>
+           <li class="nav-item text-light">
+           <a class="nav-link text-light" href="student">Academics</a>
+         </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+       </form>
+      </div>
+    </nav>
+      </div>
+    </nav>
+
+    <section id="breadcrumb">
+      <div class="container ">
+        <ol class="breadcrumb">
+          <li><a href="student" class="text-dark " >WELCOME TO SEVEN STUDENTS PLATFORM</a></li>
+          
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="list-group">
+              <a href="student" class="list-group-item"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> SEVEN STUDENTS <span class="badge">12</span></a>
+              <a href="student" class="list-group-item active main-color-bg">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
+              </a>
+              <a href="profile" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile <span class="badge">12</span></a>
+              <a href="profile" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Attendance <span class="badge">33</span></a>
+              <a href="student" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Academics <span class="badge">203</span></a>
+            </div>
+          <br>
+            <div class="well">
+              <h4>Attendance Progress</h4>
+              <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                      60%
+              </div>
+            </div>
+            <h4>Exams Progress</h4>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                    40%
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <!-- Website Overview -->
+            <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h3 class="panel-title text-center">Students Profile</h3>
+
+                  <div class=" emp-profile ">
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="profile-img">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                                    <div class="file btn btn-lg btn-primary">
+                                        Change Photo
+                                        <input type="file" name="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="profile-head">
+                                           <h5>
+                                                Name:cho brandone
+                                          </h5>
+                                          <h5>
+                                              Email:chobrandone@gmail.com
+                                          </h5>
+                                          <h5>
+                                            Level:level 4
+                                        </h5>
+                                          <h5>
+                                            course: Web Developer and Designer
+                                          </h5>
+                                            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                              
+                                <div id="qrcode">
+                                        <img class="img-fluid" class="qrcode"  src="qr code copy.png" alt="">
+                                    </div>  
+                                
+                            </div>
+                        </div>
+                        <hr class="hori">
+                        <div class="row">
+                                  <div class="col-md-7 bg-dark graph">
+                                      <p> this is the histogram</p>
+                                      </div>
+                                  
+                                      <div class="col-md-3">
+                                        <div class="card" style="width: 20rem; color: #000; ">
+                                            <div class="card-header text-center ">
+                                                Today's status
+                                            </div>
+                                            <ul class="list-group list-group-flush text-dark">
+                                              <li class="list-group-item">name: cho</li>
+                                              <li class="list-group-item">arival time : 8:30</li>
+                                              <li class="list-group-item">departure time: 9:30</li>
+                                            </ul>
+                                          </div>
+                                    </div>
+                              </div>
+
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </form>           
+                </div>
+         
+                
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <p>Copyright Seven Advance Academy, &copy; 2020</p>
+    </footer>
+
+    
+
+  <script>
+     CKEDITOR.replace( 'editor1' );
+ </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
