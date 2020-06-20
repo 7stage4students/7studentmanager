@@ -161,7 +161,7 @@ body{
     text-transform: capitalize;
      font-weight: 900;
   }
-  .
+  
   .text-color strong {
     color: orange !important;
     font-weight: 900;
@@ -172,6 +172,18 @@ body{
       font-weight: 700;
       font-size: 25px;
   }
+
+  /*adition from brandone*/
+
+  .navi{
+    float: right;
+      color: white;
+      
+  }
+  .tab{
+    border:1px solid #f89623;
+  }
+
   @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
       color: #f89623;
