@@ -8,6 +8,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/student.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/profile.css">
     <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
   </head>
   <body>
@@ -23,15 +24,16 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="nav navbar-nav ml-auto navi">
       <li class="nav-item ">
-        <a class="nav-link text-light activeBar" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-light activeBar" href="student">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link text-light" href="profile">Profile</a>
         <a class="nav-link text-light" href="/student/profile">Profile</a>
+
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="#">Attendance</a>
+        <a class="nav-link text-light" href="profile">Attendance</a>
       </li>
-      <li><a href="/" class="text-light"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
     </ul>
     </div>
     </nav>
@@ -74,37 +76,76 @@
             </div>
           </div>
           <div class="col-md-9">
-            <!-- Website Overview -->
+            <!-- student Profile -->
             <div class="panel panel-default">
               <div class="panel-heading main-color-bg">
-                <h3 class="panel-title text-center">Student Overview</h3>
+                <h3 class="panel-title text-center">Student Profile</h3>
               </div>
-              <div class="panel-body">
-                <div class="col-md-3">
-                  <div class="well dash-box span1">
-                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 203</h2>
-                    <h4>Profile</h4>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="well dash-box span2">
-                    <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 12</h2>
-                    <h4>Attendance</h4>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="well dash-box span3">
-                    <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 33</h2>
-                    <h4>Examination</h4>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="well dash-box span4">
-                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 1234</h2>
-                    <h4>Visit</h4>
-                  </div>
-                </div>
-              </div>
+                    <div class="panel panel-default">
+              <div class="panel-heading">
+
+                  <div class=" emp-profile">
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="profile-img">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                                    <div class="file btn btn-lg btn-primary">
+                                        Change Photo
+                                        <input type="file" name="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="profile-head">
+                                           <h5>
+                                                Name:cho brandone
+                                          </h5>
+                                          <h5>
+                                              Email:chobrandone@gmail.com
+                                          </h5>
+                                          <h5>
+                                            Level:level 4
+                                        </h5>
+                                          <h5>
+                                            course: Web Developer and Designer
+                                          </h5>
+                                             <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                              
+                                <dniv id="qrcode">
+                                        <img class="img-fluid" class="qrcode"  src="qr code copy.png" alt="">
+                                          <input type="submit" class="profile-edit-btn btnshare" name="btnAddMore" value="share"/>
+                                </dniv>
+                                    </div>  
+                                 
+                            </div>
+                              <hr class="hori">
+                        </div>
+                        
+                        <div class="row">
+                                  <div class="col-md-7 bg-dark graph">
+                                      <p> this is the histogram</p>
+                                      </div>
+                                  
+                                      <div class="col-md-3">
+                                        <div class="card" style="width: 28rem; color: #000; ">
+                                            <div class="card-header text-center ">
+                                                Today's status
+                                            </div>
+                                            <ul class="list-group list-group-flush text-dark">
+                                              <li class="list-group-item">name: cho</li>
+                                              <li class="list-group-item">arival time : 8:30</li>
+                                              <li class="list-group-item">departure time: 9:30</li>
+                                            </ul>
+                                          </div>
+                                    </div>
+                              </div>
+
+                                    </div>
               </div>
 
               
