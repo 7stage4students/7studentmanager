@@ -37,22 +37,22 @@ app.get('/admin', (req, res)=>{
     res.render('admin_dashboard/admin');
 });
 app.get('/admin/students', (req, res)=>{
-    res.render('Admin_Dashboard/students');
+    res.render('admin_dashboard/students');
 });
 app.get('/admin/course', (req, res)=>{
-    res.render('Admin_Dashboard/course');
+    res.render('admin_dashboard/course');
 });
 app.get('/admin/attendance', (req, res)=>{
-    res.render('Admin_Dashboard/attendance');
+    res.render('admin_dashboard/attendance');
 });
 app.get('/admin/edit', (req, res)=>{
-    res.render('Admin_Dashboard/edit');
+    res.render('admin_dashboard/edit');
 });
 app.get('/student', (req, res)=>{
-    res.render('student_Dashboard/student');
+    res.render('student_dashboard/student');
 });
-app.get('/profile', (req, res)=>{
-    res.render('student_Dashboard/profile');
+app.get('/student/profile', (req, res)=>{
+    res.render('student_dashboard/profile');
 });
 app.listen(8080,()=>{
     console.log('Server is running on http://127.0.1.1:8080');
