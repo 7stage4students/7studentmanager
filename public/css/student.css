@@ -200,6 +200,9 @@ body{
 .span4{
     background: #5e3d98;
 }
+thead{
+  border-color: #f89623;
+}
 
 
 
