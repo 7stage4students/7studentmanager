@@ -48,6 +48,12 @@ app.get('/admin/attendance', (req, res)=>{
 app.get('/admin/edit', (req, res)=>{
     res.render('Admin_Dashboard/edit');
 });
+app.get('/student', (req, res)=>{
+    res.render('student_Dashboard/student');
+});
+app.get('/profile', (req, res)=>{
+    res.render('student_Dashboard/profile');
+});
 app.listen(8080,()=>{
     console.log('Server is running on http://127.0.1.1:8080');
 })
