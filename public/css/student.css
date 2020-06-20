@@ -122,6 +122,7 @@ body{
   
   .breadcrumb a{
     color:#333333;
+    text-align: center !important;
   }
   
   /* Progress Bars */
