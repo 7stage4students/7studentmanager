@@ -31,7 +31,7 @@ exports.postRegister = () => {
 
 exports.postLogin = (req,res,next) => {
     var isStudent =  Student.validStudent(req.body.email,req.body.password);
-    if(isStudent){
+    if(isStudent.valid){
         // console.log('admin is valid')
         const token = generateAuthToken();
         // console.log('Auth Token',token)
@@ -45,7 +45,9 @@ exports.postLogin = (req,res,next) => {
         })
         .catch(error => console.error(error))
         console.log(authStudent);
-
+        //getting student info
+        let student_info = Student.get(isStudent.id);
+        console.log(student_info)
         res.cookie('authtoken',token);
         //Student Sucessfully Loged In
         res.render('student_dashboard/student');

@@ -127,16 +127,18 @@ module.exports = class Student{
     //VALIDATE STUDENT 
     static validStudent = (email,password) => {
         let isStudent = false;
+        var student_id = null;
         for(let i = 0; i < _7academy.allStuds.length; i++){
             if(_7academy.allStuds[i].email == email && _7academy.allStuds[i].hashedPassword == password){
                 isStudent = true;
+                student_id = _7academy[i].allStuds[i].id;
                 break;
             }
         }
         if(!isStudent) {
-            return false;
+            return {valid: false, id: student_id};
         }else {
-            return true
+            return {valid: true, id: student_id}
         }
     }
     // Todo: Add New student to Registerd course
