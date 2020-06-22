@@ -2,12 +2,27 @@
 const express = require('express');
 const exphbs =  require('express-handlebars');
 const path = require('path');
-const { parseTwoDigitYear } = require('moment');
+// const { parseTwoDigitYear } = require('moment');
 const bodyParser = require('body-parser');
-const adminManager = require('./routes/admin');
+const cookieParser = require('cookie-parser');
+const jsonfile = require('jsonfile');
+const fs = require('fs');
+
+//Routers
+// const adminManager = require('./routes/admin');
+const adminRouter =  require('./routes/adminRouter');
+const studentRouter = require('./routes/studentRouter');
+const regularRouter = require('./routes/regularRouter');
+
 
 const app = express()
-app.use(bodyParser.urlencoded({extended:true}))
+//Middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended:true}));
+
+app.use(cookieParser()); 
+
 app.engine('handlebars',exphbs())
 app.set('view engine','handlebars');
 
@@ -54,6 +69,39 @@ app.get('/student', (req, res)=>{
 app.get('/student/profile', (req, res)=>{
     res.render('student_dashboard/profile');
 });
+
+let authUsers = {}
+let authStudents = {}
+
+// Creating the online user cookie files
+
+app.use('/', regularRouter);
+
+app.use('/admin',(req,res,next) =>{
+    // console.log('Checking cookies');
+    let token = req.cookies['authtoken'];
+    console.log('The token: '+ token);
+    authUsers =  jsonfile.readFileSync(path.join(__dirname,'/db/authUsers.json'))
+  
+    req.user = authUsers[token];
+    next();
+})
+
+        
+app.use('/admin', adminRouter);
+
+app.use('/students',() => {
+    // console.log('Checking cookies');
+    let token = req.cookies['authtoken'];
+    authStudents =  jsonfile.readFileSync(path.join(__dirname,'/db/authStudents.json'))
+    req.user = authStudents[token];
+    next();
+})
+
+
+
+app.use('/students',studentRouter);
+
 app.listen(8080,()=>{
     console.log('Server is running on http://127.0.1.1:8080');
 })

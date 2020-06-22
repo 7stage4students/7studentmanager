@@ -19,11 +19,14 @@
   },
   "homepage": "https://github.com/Sedoid/7Attendance#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "crypto": "^1.0.1",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
     "formidable": "^1.2.2",
+    "jsonfile": "^6.0.1",
     "moment": "^2.26.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "qrcode": "^1.4.4"
   }
 }
