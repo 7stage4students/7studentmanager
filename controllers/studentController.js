@@ -59,9 +59,23 @@ exports.postLogin = (req,res,next) => {
         let student_info = Student.get(isStudent.id);
         console.log(student_info)
         res.cookie('authtoken',token);
+        let profile = Student.get(isStudent.id)
         //Student Sucessfully Loged In
+
         res.render('student_dashboard/student', {
               messageClass: 'alert-success'
+
+        res.render('student_dashboard/profile',{
+            name:profile.firstName+ " " + profile.lastName,
+            email:profile.email,
+            level:profile.level,
+            course:profile.course,
+            image:profile.image,
+            qrCode:'',
+            attendance:'',
+            arrivalTime:'',
+            depatureTime: ''
+
         });
     }else {
         res.render('student_login', {

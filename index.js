@@ -3,6 +3,7 @@ const express = require('express');
 const exphbs =  require('express-handlebars');
 const path = require('path');
 // const { parseTwoDigitYear } = require('moment');
+const  absence =  require('./models/manageAbsence')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const jsonfile = require('jsonfile');
@@ -28,6 +29,14 @@ app.set('view engine','handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/admin/:course/:level', (req, res) => {
+    console.log('API just hit its endpoint')
+    console.log(req.params.course)
+    console.log(req.params.level)
+    console.log(absence.getAll().courses.webDev.level.level1)
+    res.write('hello')
+    
+});
 ///TODO check routers
 // app.use('/admin', adminManager);
 
@@ -41,34 +50,34 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.get('/login', (req, res) => {
 //     res.render('student_login');
 // });
-// app.get('/admin_login', (req, res)=>{
-//     res.render('admin_login')
-// });
-// app.get('/admin_landing', (req, res)=>{
-//     res.render('admin_landing')
-// })
+app.get('/admin_login', (req, res)=>{
+    res.render('admin_login')
+});
+app.get('/admin_landing', (req, res)=>{
+    res.render('admin_landing')
+})
 
-// app.get('/admin', (req, res)=>{
-//     res.render('admin_dashboard/admin');
-// });
-// app.get('/admin/students', (req, res)=>{
-//     res.render('admin_dashboard/students');
-// });
-// app.get('/admin/course', (req, res)=>{
-//     res.render('admin_dashboard/course');
-// });
-// app.get('/admin/attendance', (req, res)=>{
-//     res.render('admin_dashboard/attendance');
-// });
-// app.get('/admin/edit', (req, res)=>{
-//     res.render('admin_dashboard/edit');
-// });
-// app.get('/student', (req, res)=>{
-//     res.render('student_dashboard/student');
-// });
-// app.get('/student/profile', (req, res)=>{
-//     res.render('student_dashboard/profile');
-// });
+app.get('/admin', (req, res)=>{
+    res.render('admin_dashboard/admin');
+});
+app.get('/admin/students', (req, res)=>{
+    res.render('admin_dashboard/students');
+});
+app.get('/admin/course', (req, res)=>{
+    res.render('admin_dashboard/course');
+});
+app.get('/admin/attendance', (req, res)=>{
+    res.render('admin_dashboard/attendance');
+});
+app.get('/admin/edit', (req, res)=>{
+    res.render('admin_dashboard/edit');
+});
+app.get('/student', (req, res)=>{
+    res.render('student_dashboard/student');
+});
+app.get('/student/profile', (req, res)=>{
+    res.render('student_dashboard/profile');
+});
 
 let authUsers = {}
 let authStudents = {}
@@ -103,5 +112,5 @@ app.use('/students',(req,res,next) => {
 app.use('/students',studentRouter);
 
 app.listen(8080,()=>{
-    console.log('Server is running on http://127.0.1.1:8080');
+    console.log('Server is running on localhost:8080');
 })

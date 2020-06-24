@@ -126,9 +126,9 @@
                         </div>
                         
                         <div class="row">
-                                  <div class="col-md-7 bg-dark graph">
-                                      <p> this is the histogram</p>
-                                      </div>
+                             <div class="col-md-7">
+                        <canvas id="myChart" ></canvas>
+                           </div>
                                   
                                       <div class="col-md-3">
                                         <div class="card" style="width: 28rem; color: #000; ">
@@ -209,5 +209,82 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+        let dataList = undefined;
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+fetch('http://127.0.1.1:8080/admin/webDev/level1')
+.then(response =>{
+return response.text()
+
+})
+.then(item =>{
+  console.log(item)
+})
+.catch(error=>{
+  console.log('an error occured')
+})
+
+      function raw(response) {
+  return response.text().then(function(text) {
+    return text ? JSON.parse(text) : {}
+  })
+}   
+    (async()=>{
+    //    console.log('Helo World');
+
+     //   let totalStuds = dataList.totalStuds;
+     //   let currentlyPresent = dataList.present;
+
+    //    delete dataList.totalStuds
+    //    delete dataList.present
+    // Get the list of students present daily
+ //   let dates = [];
+  //  let studsAttended = [];
+ //   for (let [key, value] of Object.entries(dataList)) {
+//        console.log(`${key}: ${value.length}`);
+ //       dates.push(key)
+ //       studsAttended.push(value.length)
+//}
+    var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+    
+
+    // The data for our dataset
+    
+    data: {
+        labels:[...dates],
+    datasets: [{
+        label: 'Attendance table',
+        data: [...studsAttended,totalStuds],
+        backgroundColor: '#00ab9f',
+        borderColor: '#00ab9f',
+        hoverBackgroundColor:"#f89623",
+        // xAxisID: "Dates",
+        // yAxisID: "Attended",
+        scales: {
+        xAxes: [{
+            gridLines: {
+                offsetGridLines: true
+            }
+        }]
+    }
+    }]
+},     
+    
+
+    // Configuration options go here
+    options: {}
+});
+    
+
+    })();  
+        
+
+</script>
   </body>
 </html>
