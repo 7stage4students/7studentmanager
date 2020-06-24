@@ -1,6 +1,10 @@
 const {generate} = require('../utils/idGenarator');
 const code  = require('../utils/qrcode');
-const _7academy ={
+const jsonFile = require('jsonfile');
+const hashedPassword = require('../utils/hash')
+const path = require('path');
+const getHashedPassword = require('../utils/hash');
+let _7academy ={
     allStuds:[
         {
             id:'id0',
@@ -52,12 +56,18 @@ const _7academy ={
                     qrCodeUrl:'',
                 }
             },
-           level2:{}
+           level2:{},
+           level3:{},
+           level4:{},
+
         },
     },
     digitalMarketing:{
         level:{
-            level1:{}
+            level1:{},
+            level2:{},
+            level3:{},
+            level4:{},
         }
     }
 
@@ -65,6 +75,14 @@ const _7academy ={
 
 }
 
+
+// jsonFile.writeFileSync(path.join(__dirname,'../','db','_7academy.json'),_7academy,()=>{
+//     console.log('File Updated successfully')
+// })
+
+
+    _7academy = jsonFile.readFileSync(path.join(__dirname,'../','db','_7academy.json'))
+ 
 module.exports = class Student{
     constructor(id,name,email,password,level,course,photoUrl,qrCodeUrl){
 
@@ -128,10 +146,17 @@ module.exports = class Student{
     static validStudent = (email,password) => {
         let isStudent = false;
         var student_id = null;
+
         for(let i = 0; i < _7academy.allStuds.length; i++){
-            if(_7academy.allStuds[i].email == email && _7academy.allStuds[i].hashedPassword == password){
+            if(_7academy.allStuds[i].email == email && _7academy.allStuds[i].password == hashedPassword(password))
+            {
                 isStudent = true;
-                student_id = _7academy[i].allStuds[i].id;
+                console.log('success')
+                student_id = _7academy.allStuds[i].id;
+                jsonFile.writeFileSync(path.join(__dirname,'../','db','_7academy.json'),_7academy,()=>{
+                    console.log('File Updated successfully')
+                })
+
                 break;
             }
         }
@@ -141,17 +166,36 @@ module.exports = class Student{
             return {valid: true, id: student_id}
         }
     }
+
     // Todo: Add New student to Registerd course
     static register(newStudent){
-   
+        newStudent.password = getHashedPassword(newStudent.password)
         newStudent.id = generate();      // generate new User id
         newStudent.qrcodeUrl = code(newStudent);  // Todo: Generate users qrcode
 
-        _7academy.courses[`${newStudent.course}`].level[`${newStudent.level}`][`${newStudent.id}`] = newStudent;
+        _7academy = jsonFile.readFileSync(path.join(__dirname,'../','db','_7academy.json'))
 
+        _7academy.allStuds.push({
+            id:newStudent.id,
+            course: newStudent.course,
+            email: newStudent.email,
+            level: newStudent.level,
+            password: newStudent.password
+            })
+        
+        
+       
+ 
+        _7academy.courses[`${newStudent.course}`].level[`${newStudent.level}`][`${newStudent.id}`] = newStudent;
+      
+        jsonFile.writeFileSync(path.join(__dirname,'../','db','_7academy.json'),_7academy,()=>{
+            console.log('File Updated successfully')
+        })  
+      
         return {message:'Registered Successfully',
                 id: newStudent.id};
     }
+
     // Todo: Delete student By id
     static deleteStudent(id){
         let student = this.get(id)
@@ -163,6 +207,10 @@ module.exports = class Student{
                 }
 
         delete _7academy.courses[`${student.course}`].level[`${student.level}`][`${id}`];    //  Updating the student class list
+
+        jsonFile.writeFileSync(path.join(__dirname,'../','db','_7academy.json'),_7academy,()=>{
+            console.log('File Updated successfully')
+        })
 
         return 'Deleted successfully'
     }

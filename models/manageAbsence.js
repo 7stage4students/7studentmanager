@@ -1,6 +1,6 @@
 const Student = require('./studentsModel');
 const { time,property } = require('../utils/logger');
-student = new Student();
+
 
 
 let absence ={
@@ -354,9 +354,12 @@ let absence ={
     
 }
 // absence.courses[`${details.course}`].level[`${details.level}`][`${property()}`] = []
+getAll =() =>{
+    return absence
+}
 getAttendanceById =(id) => {
     
-    let details = student.get(id);
+    let details = Student.get(id);
     let presence = false;
     let attendanceLog = [];
     const absenceList = absence.courses.webDev.level[details.level];
@@ -394,7 +397,7 @@ getAttendanceById =(id) => {
 }
 
 markAttendanceById = (id) =>{
-    let _student = student.get(id);
+    let _student = Student.get(id);
 
         if(!absence.courses[`${_student.course}`].level[`${_student.level}`][`${property()}`])
             {
@@ -406,15 +409,14 @@ markAttendanceById = (id) =>{
           
 }
 
-markDepartureById = () =>{
+// markDepartureById = () =>{
 
-}
+// }
 
-getAttendanceById('id0');
+// getAttendanceById('id0');
 
-markAttendanceById('id1')
+// markAttendanceById('id1')
 
 console.log(absence.courses.webDev.level.level1[`${property()}`])
 
-module.exports = absence;
-module.exports = {getAttendanceById,markAttendanceById}
+module.exports = {getAttendanceById,markAttendanceById,getAll}

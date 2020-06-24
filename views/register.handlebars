@@ -34,14 +34,14 @@
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <h3 class="register-heading"> Register Students on our Management System </h3>
 
-            <form action="/students/register" method="post">
+            <form action="/students/register" multimedia="true" method="post">
               <div class="row register-form">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="First Name *" value="" />
+                    <input type="text" class="form-control" name="firstName" placeholder="First Name *" value="" />
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                    <input type="text" class="form-control" name="lastName" placeholder="Last Name *" value="" />
                   </div>
                   <div class="form-group">
                     <div class="maxl">
@@ -55,10 +55,10 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                    <input type="email" class="form-control" name="email" placeholder="Your Email *" value="" />
                   </div>
                   <div class="form-group">
-                    <input type="date" class="form-control" placeholder="Date Of Birth *" value="" />
+                    <input type="date" class="form-control" name="date" placeholder="Date Of Birth *" value="" />
                   </div>
                   <div class="form-group">
                     <div class="maxl">
@@ -87,18 +87,18 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control"
+                    <input type="text" minlength="10" maxlength="10" name="phone" class="form-control"
                       placeholder="Your Phone *" value="" />
                   </div>
                   <div class="form-group">
-                    <input type="file" class="form-control" placeholder="upload image *" value="" />
+                    <input type="file" class="form-control" name="image" placeholder="upload image *" value="" />
                   </div>
 
                   <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password *" value="" />
+                    <input type="password" class="form-control" name="password" placeholder="Password *" value="" />
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                    <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password *" value="" />
                   </div>
                   <input type="submit" class="btnRegister" value="Register" />
                 </div>
