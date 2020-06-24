@@ -103,5 +103,5 @@ app.use('/students',(req,res,next) => {
 app.use('/students',studentRouter);
 
 app.listen(8080,()=>{
-    console.log('Server is running on http://127.0.1.1:8080');
+    console.log('Server is running on http://localhost:8080');
 })

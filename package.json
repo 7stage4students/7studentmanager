@@ -23,6 +23,7 @@
     "crypto": "^1.0.1",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
+    "firebase-tools": "^8.4.3",
     "formidable": "^1.2.2",
     "jsonfile": "^6.0.1",
     "moment": "^2.26.0",

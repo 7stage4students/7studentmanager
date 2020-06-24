@@ -2,21 +2,10 @@ const hashMethod = require('../utils/hash');
 const generateAuthToken = require('../utils/authToken')
 const jsonfile = require('jsonfile');
 const path = require('path');
-const Student = require('../models/studentsModel');
+const Student = require('../models/Student.js');
 // const Admin = require('../models/adminModel')
 
 let authStudent = {}
-
-
-exports.getLogin = (req,res,next) => {
-    res.render("student_login");
-    // res.send('Student Login Page')
-}
-
-exports.getRegister = (req,res) => {
-    res.render('register');
-    //res.send('student Register Page')
-}
 
 exports.postRegister = (req,res) => {
     console.log('post requesst to regiser')
@@ -30,6 +19,8 @@ exports.postRegister = (req,res) => {
     }
         
 }
+
+
 
 exports.postLogin = (req,res,next) => {
     console.log("success")

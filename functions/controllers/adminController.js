@@ -4,7 +4,7 @@ const jsonfile = require('jsonfile');
 const path = require('path');
 
 
-const Student = require('../models/studentsModel');
+const Student = require('../models/Student.js');
 const Admin = require('../models/adminModel')
 
 
