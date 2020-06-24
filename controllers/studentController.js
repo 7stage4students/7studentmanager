@@ -24,9 +24,15 @@ exports.postRegister = (req,res) => {
         console.log(req.body)
         Student.register(req.body);
         // res.json('student registered'); 
-        res.render('student_login');
+        res.render('student_login', {
+            message: "an error occured please register again",
+            messageClass: 'alert alert-danger'
+        });
     }else {
-        res.render('register');
+        res.render('register', {
+            message:"successfully registered please login to continue",
+            messageClass: 'alert alert-success'
+        });
     }
         
 }
@@ -54,9 +60,14 @@ exports.postLogin = (req,res,next) => {
         console.log(student_info)
         res.cookie('authtoken',token);
         //Student Sucessfully Loged In
-        res.render('student_dashboard/student');
+        res.render('student_dashboard/student', {
+              messageClass: 'alert-success'
+        });
     }else {
-        res.render('student_login');
+        res.render('student_login', {
+            message: 'User already existed',
+            messageClass: 'alert-danger'
+        });
     }
 }
 

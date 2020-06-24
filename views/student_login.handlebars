@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   {{> header}}
@@ -61,6 +61,11 @@ form{
     margin-top:20px;
 }
     </style>
+    {{#if message}}
+            <div class="alert {{messageClass}}" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
     <div class="global-container">
         <div class="card login-form">
         <div class="card-body">

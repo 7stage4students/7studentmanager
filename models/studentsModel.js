@@ -13,7 +13,7 @@ const _7academy ={
             course:'webDev',
             level:'level1',
             email:'me@me.com',
-            password:'',
+            password:'12',
         }
     ] ,
     courses:{
@@ -84,7 +84,7 @@ module.exports = class Student{
         // Collect the parameter id
         let exists = false;
         this.id = id;
-        for(let i=0; i<_7academy.allStuds.length;i++)
+        for(let i=0; i<_7academy.allStuds.length; i++)
         // Search if students exists
             if(_7academy.allStuds[i].id === this.id){
                 exists = true
