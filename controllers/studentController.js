@@ -13,15 +13,17 @@ exports.getLogin = (req,res,next) => {
     // res.send('Student Login Page')
 }
 
-exports.getRegister = () => {
+exports.getRegister = (req,res) => {
     res.render('register');
     //res.send('student Register Page')
 }
 
-exports.postRegister = () => {
+exports.postRegister = (req,res) => {
+    console.log('post requesst to regiser')
     if(req.body) {
-        Student.register(req.body)
-        res.json('student registered'); 
+        console.log(req.body)
+        Student.register(req.body);
+        // res.json('student registered'); 
         res.render('student_login');
     }else {
         res.render('register');
@@ -30,7 +32,9 @@ exports.postRegister = () => {
 }
 
 exports.postLogin = (req,res,next) => {
+    console.log("success")
     var isStudent =  Student.validStudent(req.body.email,req.body.password);
+    console.log(isStudent.valid)
     if(isStudent.valid){
         // console.log('admin is valid')
         const token = generateAuthToken();

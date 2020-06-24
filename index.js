@@ -32,43 +32,43 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/admin', adminManager);
 
 
-app.get('/',(req, res)=>{
-    res.render('index');
-})
- app.get('/register', (req, res)=>{
-    res.render('register');
-});
-app.get('/login', (req, res) => {
-    res.render('student_login');
-});
-app.get('/admin_login', (req, res)=>{
-    res.render('admin_login')
-});
-app.get('/admin_landing', (req, res)=>{
-    res.render('admin_landing')
-})
+// app.get('/',(req, res)=>{
+//     res.render('index');
+// })
+//  app.get('/register', (req, res)=>{
+//     res.render('register');
+// });
+// app.get('/login', (req, res) => {
+//     res.render('student_login');
+// });
+// app.get('/admin_login', (req, res)=>{
+//     res.render('admin_login')
+// });
+// app.get('/admin_landing', (req, res)=>{
+//     res.render('admin_landing')
+// })
 
-app.get('/admin', (req, res)=>{
-    res.render('admin_dashboard/admin');
-});
-app.get('/admin/students', (req, res)=>{
-    res.render('admin_dashboard/students');
-});
-app.get('/admin/course', (req, res)=>{
-    res.render('admin_dashboard/course');
-});
-app.get('/admin/attendance', (req, res)=>{
-    res.render('admin_dashboard/attendance');
-});
-app.get('/admin/edit', (req, res)=>{
-    res.render('admin_dashboard/edit');
-});
-app.get('/student', (req, res)=>{
-    res.render('student_dashboard/student');
-});
-app.get('/student/profile', (req, res)=>{
-    res.render('student_dashboard/profile');
-});
+// app.get('/admin', (req, res)=>{
+//     res.render('admin_dashboard/admin');
+// });
+// app.get('/admin/students', (req, res)=>{
+//     res.render('admin_dashboard/students');
+// });
+// app.get('/admin/course', (req, res)=>{
+//     res.render('admin_dashboard/course');
+// });
+// app.get('/admin/attendance', (req, res)=>{
+//     res.render('admin_dashboard/attendance');
+// });
+// app.get('/admin/edit', (req, res)=>{
+//     res.render('admin_dashboard/edit');
+// });
+// app.get('/student', (req, res)=>{
+//     res.render('student_dashboard/student');
+// });
+// app.get('/student/profile', (req, res)=>{
+//     res.render('student_dashboard/profile');
+// });
 
 let authUsers = {}
 let authStudents = {}
@@ -90,11 +90,11 @@ app.use('/admin',(req,res,next) =>{
         
 app.use('/admin', adminRouter);
 
-app.use('/students',() => {
+app.use('/students',(req,res,next) => {
     // console.log('Checking cookies');
-    let token = req.cookies['authtoken'];
-    authStudents =  jsonfile.readFileSync(path.join(__dirname,'/db/authStudents.json'))
-    req.user = authStudents[token];
+    // let token = req.cookies['authtoken'];
+    // authStudents =  jsonfile.readFileSync(path.join(__dirname,'/db/authStudents.json'))
+    // req.user = authStudents[token];
     next();
 })
 

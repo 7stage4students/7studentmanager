@@ -347,7 +347,9 @@ let absence ={
             }
             }
         },
-        digitalMarketing:{}
+        digitalMarketing:{},
+        android:{},
+        itSecurity:{}
     }
     
 }
