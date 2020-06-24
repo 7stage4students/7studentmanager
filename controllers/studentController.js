@@ -25,13 +25,13 @@ exports.postRegister = (req,res) => {
         Student.register(req.body);
         // res.json('student registered'); 
         res.render('student_login', {
-            message: "an error occured please register again",
-            messageClass: 'alert alert-danger'
+            message: "successfully registered please login",
+            messageClass: 'alert alert-success'
         });
     }else {
         res.render('register', {
-            message:"successfully registered please login to continue",
-            messageClass: 'alert alert-success'
+            message:"an error occured please register again",
+            messageClass: 'alert alert-danger'
         });
     }
         
