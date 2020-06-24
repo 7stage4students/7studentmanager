@@ -24,9 +24,15 @@ exports.postRegister = (req,res) => {
         console.log(req.body)
         Student.register(req.body);
         // res.json('student registered'); 
-        res.render('student_login');
+        res.render('student_login', {
+            message: "successfully registered please login",
+            messageClass: 'alert alert-success'
+        });
     }else {
-        res.render('register');
+        res.render('register', {
+            message:"an error occured please register again",
+            messageClass: 'alert alert-danger'
+        });
     }
         
 }
@@ -55,6 +61,10 @@ exports.postLogin = (req,res,next) => {
         res.cookie('authtoken',token);
         let profile = Student.get(isStudent.id)
         //Student Sucessfully Loged In
+
+        res.render('student_dashboard/student', {
+              messageClass: 'alert-success'
+
         res.render('student_dashboard/profile',{
             name:profile.firstName+ " " + profile.lastName,
             email:profile.email,
@@ -65,9 +75,13 @@ exports.postLogin = (req,res,next) => {
             attendance:'',
             arrivalTime:'',
             depatureTime: ''
+
         });
     }else {
-        res.render('student_login');
+        res.render('student_login', {
+            message: 'User already existed',
+            messageClass: 'alert-danger'
+        });
     }
 }
 

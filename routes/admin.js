@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/admin', (req, res)=>{
-    res.send('admin_dashboard/admin');
+    res.render('admin_dashboard/admin');
 });
 router.get('/students', (req, res)=>{
     res.render('Admin_Dashboard/students');

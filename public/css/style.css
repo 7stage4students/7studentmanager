@@ -95,6 +95,11 @@
     margin-bottom: -15%;
     color: #495057;
 }
+.link{
+    background-color: #00ab9f;
+    border-radius: 50%;
+    margin-right: 2px;
+}
 .link:hover{
     background-color: chocolate;
     border-radius: 50px;

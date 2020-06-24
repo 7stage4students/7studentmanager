@@ -8,7 +8,7 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+  {{!-- <link rel="stylesheet" href="style.css"> --}}
 </head>
 
 <body>
@@ -16,6 +16,7 @@
   <style>
 
   </style>
+     
   <div class="container register">
     <div class="row">
       <div class="col-md-3 col-sm-4 register-left">
@@ -34,6 +35,13 @@
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <h3 class="register-heading"> Register Students on our Management System </h3>
 
+
+            <form action="/students/register" method="post">
+             {{#if message}}
+            <div class="alert {{messageClass}}" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
             <form action="/students/register" multimedia="true" method="post">
               <div class="row register-form">
                 <div class="col-md-6">
@@ -87,6 +95,11 @@
                     </div>
                   </div>
                   <div class="form-group">
+                    <input type="text" minlength="9" maxlength="9" name="txtEmpPhone" class="form-control"
+                      placeholder="Your Phone *" value="" />
+                  </div>
+                  <div class="form-group">
+                    <input type="number/text" class="form-control" placeholder="matricule *" value="" />
                     <input type="text" minlength="10" maxlength="10" name="phone" class="form-control"
                       placeholder="Your Phone *" value="" />
                   </div>
