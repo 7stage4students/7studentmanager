@@ -1,290 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Student Area | Dashboard</title>
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/student.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/profile.css">
-    <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
-  </head>
-  <body>
-     
-   <nav class="navbar navbar-expand-lg navbar-default">
-       <div class="container">
-  <div class="col-md-4">
-      <h1><span class="glyphicon glyphicon-cog text-light" aria-hidden="true"></span> Dashboard </h1>
-    </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="nav navbar-nav ml-auto navi">
-      <li class="nav-item ">
-        <a class="nav-link text-light activeBar" href="/student">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-light" href="/student/profile">Profile</a>
 
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-light" href="/student/profile">Attendance</a>
-      </li>
-    </ul>
-    </div>
-    </nav>
- 
-    <section id="breadcrumb">
-      <div class="container">
-        <ol class="breadcrumb text-center">
-          <li class="active ">Dashboard</li>
-        </ol>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Area | Dashboard</title>
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/student.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/profile.css">
+  <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-default">
+    <div class="container">
+      <div class="col-md-4">
+        <h1><span class="glyphicon glyphicon-cog text-light" aria-hidden="true"></span> Dashboard </h1>
       </div>
-    </section>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav ml-auto navi">
+          <li class="nav-item ">
+            <a class="nav-link text-light activeBar" href="/student">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/student/profile">Profile</a>
 
-    <section id="main">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="list-group">
-                 <a href="/student" class="list-group-item"><span class="glyphicon glyphicon-cog text-light" aria-hidden="true"></span>Seven student </a>
-              <a href="/student" class="list-group-item active main-color-bg">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
-              </a>
-              <a href="#" class="list-group-item"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span> Profile<span class="badge">12</span></a>
-              <a href="/student/profile" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Atendance <span class="badge">33</span></a>
-              <a href="/student/profile" class="list-group-item"><span class="glyphicon glyphicon-pencil " aria-hidden="true"></span> Examination <span class="badge">203</span></a>
-            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/student/profile">Attendance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/">Logout</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
 
-            <div class="well">
-              <h4>Attendance per month</h4>
-              <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                      60%
+  <section id="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb text-center">
+        <li class="active ">Dashboard</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="list-group">
+            <a href="/student" class="list-group-item"><span class="glyphicon glyphicon-cog text-light"
+                aria-hidden="true"></span>Seven student </a>
+            <a href="/student" class="list-group-item active main-color-bg">
+              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
+            </a>
+            <a href="#" class="list-group-item"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>
+              Profile<span class="badge">12</span></a>
+            <a href="/student/profile" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                aria-hidden="true"></span> Atendance <span class="badge">33</span></a>
+            <a href="/student/profile" class="list-group-item"><span class="glyphicon glyphicon-pencil "
+                aria-hidden="true"></span> Examination <span class="badge">203</span></a>
+          </div>
+
+          <div class="well">
+            <h4>Attendance per month</h4>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                style="width: 60%;">
+                60%
               </div>
             </div>
             <h4>Examination </h4>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                    40%
-            </div>
-          </div>
-            </div>
-          </div>
-          <div class="col-md-9">
-            <!-- student Profile -->
-            <div class="panel panel-default">
-              <div class="panel-heading main-color-bg">
-                <h3 class="panel-title text-center">Student Profile</h3>
+              <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                style="width: 40%;">
+                40%
               </div>
-                    <div class="panel panel-default">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <!-- student Profile -->
+          <div class="panel panel-default">
+            <div class="panel-heading main-color-bg">
+              <h3 class="panel-title text-center">Student Profile</h3>
+            </div>
+            <div class="panel panel-default">
               <div class="panel-heading">
 
-                  <div class=" emp-profile">
-                    <form method="post">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="profile-img">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                                    <div class="file btn btn-lg btn-primary">
-                                        Change Photo
-                                        <input type="file" name="file"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="profile-head">
-                                           <h5>
-                                                Name:{{name}}
-                                          </h5>
-                                          <h5>
-                                              Email:{{email}}
-                                          </h5>
-                                          <h5>
-                                            Level:{{level}}
-                                        </h5>
-                                          <h5>
-                                            course: {{course}}
-                                          </h5>
-                                             <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                              
-                                <dniv id="qrcode">
-                                        <img class="img-fluid" class="qrcode"  src="qr code copy.png" alt="">
-                                          <input type="submit" class="profile-edit-btn btnshare" name="btnAddMore" value="share"/>
-                                </dniv>
-                                    </div>  
-                                 
-                            </div>
-                              <hr class="hori">
+                <div class=" emp-profile">
+                  <form method="post">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="profile-img">
+                          <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                            alt="" />
+                          <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file" />
+                          </div>
                         </div>
-                        
-                        <div class="row">
-                             <div class="col-md-7">
-                        <canvas id="myChart" ></canvas>
-                           </div>
-                                  
-                                      <div class="col-md-3">
-                                        <div class="card" style="width: 28rem; color: #000; ">
-                                            <div class="card-header text-center ">
-                                                Today's status
-                                            </div>
-                                            <ul class="list-group list-group-flush text-dark">
-                                              <li class="list-group-item">name: {{name}}</li>
-                                              <li class="list-group-item">arival time : {{time_date}}</li>
-                                              <li class="list-group-item">departure time: {{time_date}}</li>
-                                            </ul>
-                                          </div>
-                                    </div>
-                              </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="profile-head">
+                          <h5>
+                            Name:{{name}}
+                          </h5>
+                          <h5>
+                            Email:{{email}}
+                          </h5>
+                          <h5>
+                            Level:{{level}}
+                          </h5>
+                          <h5>
+                            course: {{course}}
+                          </h5>
+                          <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
 
-                                    </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+
+                        <dniv id="qrcode">
+                          <img class="img-fluid" class="qrcode" src="qr code copy.png" alt="">
+                          <input type="submit" class="profile-edit-btn btnshare" name="btnAddMore" value="share" />
+                        </dniv>
+                      </div>
+
+                    </div>
+                    <hr class="hori">
+                </div>
+
+                <div class="row">
+                  <div class="col-md-7">
+                    <canvas id="myChart"></canvas>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="card" style="width: 28rem; color: #000; ">
+                      <div class="card-header text-center ">
+                        Today's status
+                      </div>
+                      <ul class="list-group list-group-flush text-dark">
+                        <li class="list-group-item">name: {{name}}</li>
+                        <li class="list-group-item">arival time : {{time_date}}</li>
+                        <li class="list-group-item">departure time: {{time_date}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
               </div>
+            </div>
 
-              
+
           </div>
         </div>
       </div>
-    </section>
+  </section>
 
-    <footer id="footer">
-      <p>Copyright AdminStrap, &copy; 2017</p>
-    </footer>
+  <footer id="footer">
+    <p>Copyright AdminStrap, &copy; 2017</p>
+  </footer>
 
-    <!-- Modals -->
+  <!-- Modals -->
 
-    <!-- Add Page -->
-    <div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <form>
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add Page</h4>
+  <!-- Add Page -->
+  <div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Add Page</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Page Title</label>
+              <input type="text" class="form-control" placeholder="Page Title">
+            </div>
+            <div class="form-group">
+              <label>Page Body</label>
+              <textarea name="editor1" class="form-control" placeholder="Page Body"></textarea>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Published
+              </label>
+            </div>
+            <div class="form-group">
+              <label>Meta Tags</label>
+              <input type="text" class="form-control" placeholder="Add Some Tags...">
+            </div>
+            <div class="form-group">
+              <label>Meta Description</label>
+              <input type="text" class="form-control" placeholder="Add Meta Description...">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
       </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label>Page Title</label>
-          <input type="text" class="form-control" placeholder="Page Title">
-        </div>
-        <div class="form-group">
-          <label>Page Body</label>
-          <textarea name="editor1" class="form-control" placeholder="Page Body"></textarea>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Published
-          </label>
-        </div>
-        <div class="form-group">
-          <label>Meta Tags</label>
-          <input type="text" class="form-control" placeholder="Add Some Tags...">
-        </div>
-        <div class="form-group">
-          <label>Meta Description</label>
-          <input type="text" class="form-control" placeholder="Add Meta Description...">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-      </div>
-    </form>
     </div>
   </div>
-</div>
 
   <script>
-     CKEDITOR.replace( 'editor1' );
- </script>
+    CKEDITOR.replace('editor1');
+  </script>
 
-    <!-- Bootstrap core JavaScript
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script>
-        let dataList = undefined;
-        var ctx = document.getElementById('myChart').getContext('2d');
 
-fetch('http://127.0.1.1:8080/admin/webDev/level1')
-.then(response =>{
-return response.text()
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script>
+    let dataList = undefined;
+    var ctx = document.getElementById('myChart').getContext('2d');
 
-})
-.then(item =>{
-  console.log(item)
-})
-.catch(error=>{
-  console.log('an error occured')
-})
+    fetch('http://127.0.1.1:8080/admin/webDev/level1')
+      .then(response => {
+        return response.text()
 
-      function raw(response) {
-  return response.text().then(function(text) {
-    return text ? JSON.parse(text) : {}
-  })
-}   
-    (async()=>{
-    //    console.log('Helo World');
+      })
+      .then(item => {
+        console.log(item)
+      })
+      .catch(error => {
+        console.log('an error occured')
+      })
 
-     //   let totalStuds = dataList.totalStuds;
-     //   let currentlyPresent = dataList.present;
-
-    //    delete dataList.totalStuds
-    //    delete dataList.present
-    // Get the list of students present daily
- //   let dates = [];
-  //  let studsAttended = [];
- //   for (let [key, value] of Object.entries(dataList)) {
-//        console.log(`${key}: ${value.length}`);
- //       dates.push(key)
- //       studsAttended.push(value.length)
-//}
-    var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'bar',
-    
-
-    // The data for our dataset
-    
-    data: {
-        labels:[...dates],
-    datasets: [{
-        label: 'Attendance table',
-        data: [...studsAttended,totalStuds],
-        backgroundColor: '#00ab9f',
-        borderColor: '#00ab9f',
-        hoverBackgroundColor:"#f89623",
-        // xAxisID: "Dates",
-        // yAxisID: "Attended",
-        scales: {
-        xAxes: [{
-            gridLines: {
-                offsetGridLines: true
-            }
-        }]
+    function raw(response) {
+      return response.text().then(function (text) {
+        return text ? JSON.parse(text) : {}
+      })
     }
-    }]
-},     
-    
+    (async () => {
+      //    console.log('Helo World');
 
-    // Configuration options go here
-    options: {}
-});
-    
+      //   let totalStuds = dataList.totalStuds;
+      //   let currentlyPresent = dataList.present;
 
-    })();  
-        
+      //    delete dataList.totalStuds
+      //    delete dataList.present
+      // Get the list of students present daily
+      //   let dates = [];
+      //  let studsAttended = [];
+      //   for (let [key, value] of Object.entries(dataList)) {
+      //        console.log(`${key}: ${value.length}`);
+      //       dates.push(key)
+      //       studsAttended.push(value.length)
+      //}
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
 
-</script>
-  </body>
+
+        // The data for our dataset
+
+        data: {
+          labels: [...dates],
+          datasets: [{
+            label: 'Attendance table',
+            data: [...studsAttended, totalStuds],
+            backgroundColor: '#00ab9f',
+            borderColor: '#00ab9f',
+            hoverBackgroundColor: "#f89623",
+            // xAxisID: "Dates",
+            // yAxisID: "Attended",
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  offsetGridLines: true
+                }
+              }]
+            }
+          }]
+        },
+
+
+        // Configuration options go here
+        options: {}
+      });
+
+
+    })();
+
+
+  </script>
+</body>
+
 </html>
