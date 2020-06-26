@@ -35,6 +35,11 @@
             <h3 class="register-heading"> Register Students on our Management System </h3>
 
             <form action="/students/register" multimedia="true" method="post">
+                  {{#if message}}
+                     <div class="alert {{messageClass}}" role="alert">
+                        {{message}}
+                     </div>
+                  {{/if}}
               <div class="row register-form">
                 <div class="col-md-6">
                   <div class="form-group">

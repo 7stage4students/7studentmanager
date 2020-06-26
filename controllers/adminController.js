@@ -39,7 +39,10 @@ exports.postLogin = (req,res,next) => {
         res.cookie('authtoken',token);
         res.render('admin_dashboard/admin');
     }else {
-        res.render('admin_login');
+        res.render('admin_login', {
+            message: 'Wrong password or email',
+            messageClass: 'alert-danger'
+        });
     }
 }
 // get all students in all Levels

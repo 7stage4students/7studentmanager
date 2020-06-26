@@ -24,11 +24,16 @@ exports.postRegister = (req,res) => {
         console.log(req.body)
         Student.register(req.body);
         // res.json('student registered'); 
-        res.render('student_login');
+        res.render('student_login',{
+            // message: 'Successfully Registered',
+            // messageClass: 'alert-success'
+        });
     }else {
-        res.render('register');
+        res.render('register', {
+            message: 'Not registered please enter all the fields correctly',
+            messageClass: 'alert-danger'
+        });
     }
-        
 }
 
 exports.postLogin = (req,res,next) => {
@@ -65,9 +70,13 @@ exports.postLogin = (req,res,next) => {
             attendance:'',
             arrivalTime:'',
             depatureTime: ''
+         
         });
     }else {
-        res.render('student_login');
+        res.render('student_login', {
+            message: 'Wrong password or email',
+            messageClass: 'alert-danger'
+        });
     }
 }
 

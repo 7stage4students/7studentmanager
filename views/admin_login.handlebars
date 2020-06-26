@@ -70,6 +70,11 @@ form{
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
                 <form>
                     <!-- to error: add class "has-danger" -->
+                 {{#if message}}
+                     <div class="alert {{messageClass}}" role="alert">
+                      {{message}}
+                     </div>
+                  {{/if}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
                         <input type="text" class="form-control form-control-sm" id="name"  required>
