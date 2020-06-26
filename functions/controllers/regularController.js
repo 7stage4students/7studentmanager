@@ -2,54 +2,72 @@ var validator = require("email-validator");
 var firebase = require("firebase");
 
 
-const firebaseConfig = {
-    apiKey: "AIzaSyD5uDwSnZOt4JgRabgbPa6pVCWT5hAvv00",
-    authDomain: "seven-student-manager.firebaseapp.com",
-    databaseURL: "https://seven-student-manager.firebaseio.com",
-    projectId: "seven-student-manager",
-    storageBucket: "seven-student-manager.appspot.com",
-    messagingSenderId: "22957180351",
-    appId: "1:22957180351:web:938c0e5fb5f4271dd9cd0a",
-    measurementId: "G-E01R35FKCM"
-  };
-firebase.initializeApp(
-firebaseConfig
-);
+
 
 var auth = firebase.auth();
 
-exports.index = (req,res,next) => {
+exports.index = (req, res, next) => {
     res.render('index');
 }
 
-exports.loginForm = (req,res,next) => {
+exports.loginForm = (req, res, next) => {
     res.render('login');
 }
-exports.registerForm = (req,res,next) => {
+exports.registerForm = (req, res, next) => {
     res.render('register');
 }
 
 
 
-exports.login = (req, res, next)=>{
-    var {email, password} = req.body;
+exports.login = (req, res, next) => {
+    var {
+        email,
+        password
+    } = req.body;
     //validate email
-    if(validator.validate(email)){
-     auth.signInWithEmailAndPassword(email, password).then((value)=>{
-         
-     })
+    if (validator.validate(email)) {
+        
+        auth.signInWithEmailAndPassword(email, password).then((value) => {
+
+        })
 
     }
-   
+
 }
 
-exports.signOut = (req, res, next)=>{
-    auth.signOut().then(()=>{
+exports.signOut = (req, res, next) => {
+    auth.signOut().then(() => {
         console.log("succesfully signed out")
     });
 }
 
-exports.register = (req, res, next)=>{
-    
-    res.send("register")
+exports.register = async(req, res, next) => {
+    ///TODO check validation
+    ///TODO check if user exists
+    ///TODO register new user
+    ///TODO redirect to dashboard
+   
+        console.log(req.body)
+        var {
+            first_name,
+            last_name,
+            level,
+            email,
+            dob,
+            gender,
+            course,
+            phone,
+            matricule,
+            password
+        } = req.body;
+        const user = await admin.auth().createUser({
+            email,
+            phone,
+            password,
+            displayName: `${first_name} ${last_name}`,
+            photoURL: ''
+        });
+
+        return res.send(user);
+
 }

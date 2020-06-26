@@ -1,6 +1,4 @@
-const hashMethod = require('../utils/hash');
-const generateAuthToken = require('../utils/authToken')
-const jsonfile = require('jsonfile');
+
 const path = require('path');
 const Student = require('../models/Student.js');
 // const Admin = require('../models/adminModel')
@@ -13,9 +11,15 @@ exports.postRegister = (req,res) => {
         console.log(req.body)
         Student.register(req.body);
         // res.json('student registered'); 
-        res.render('student_login');
+        res.render('student_login', {
+            message: "successfully registered please login",
+            messageClass: 'alert alert-success'
+        });
     }else {
-        res.render('register');
+        res.render('register', {
+            message:"an error occured please register again",
+            messageClass: 'alert alert-danger'
+        });
     }
         
 }
@@ -44,10 +48,27 @@ exports.postLogin = (req,res,next) => {
         let student_info = Student.get(isStudent.id);
         console.log(student_info)
         res.cookie('authtoken',token);
+        let profile = Student.get(isStudent.id)
         //Student Sucessfully Loged In
-        res.render('student_dashboard/student');
+
+       
+        res.render('student_dashboard/profile',{
+            name:profile.firstName+ " " + profile.lastName,
+            email:profile.email,
+            level:profile.level,
+            course:profile.course,
+            image:profile.image,
+            qrCode:'',
+            attendance:'',
+            arrivalTime:'',
+            depatureTime: ''
+
+        });
     }else {
-        res.render('student_login');
+        res.render('student_login', {
+            message: 'User already existed',
+            messageClass: 'alert-danger'
+        });
     }
 }
 

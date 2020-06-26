@@ -5,13 +5,13 @@ const router = express.Router();
 const adminController = require('../controllers/adminController');
 
 //Admin Login Page Route
-router.get('/admin_login',adminController.getLogin)
+router.get('/admin_login', adminController.getLogin)
 
 //Admin Login Post Request Route
-router.post('/admin_login',adminController.postLogin)
+router.post('/admin_login', adminController.postLogin)
 
 // get all students in all Levels
-router.get('/admin/students/', adminController.getAllStudents);
+router.get('/admin/students', adminController.getAllStudents);
 
 // get a single student
 router.get('/admin/students/:id', adminController.getStudent);
