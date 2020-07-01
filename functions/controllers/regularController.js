@@ -1,8 +1,11 @@
 var validator = require("email-validator");
 const {
-    firebase,
     admin
-} = require("../env/firebase_config.js")
+} = require("../env/firebase_config.js");
+const Student = require("../models/Student.js");
+const { DataSnapshot } = require("firebase-functions/lib/providers/database");
+
+var db = admin.firestore();
 
 exports.index = (req, res, next) => {
     res.render('index');
@@ -23,26 +26,22 @@ exports.login = (req, res, next) => {
         password
     } = req.body;
     //validate email
-    if (validator.validate(email)) {
+    // if (validator.validate(email)) {
 
-        auth.signInWithEmailAndPassword(email, password).then((value) => {
+        
 
-        })
-
-    }
+    // }
 
 }
 
 exports.signOut = (req, res, next) => {
-    auth.signOut().then(() => {
-        console.log("succesfully signed out")
+    admin.auth.signOut().then((value) => {
+    return res.send("sign_out")    }).catch((error)=>{
+        throw error
     });
 }
 
-exports.register = async (req, res, next) => {
-    ///implement matriculation check
-    ///TODO redirect to dashboard
-
+exports.register = (req, res) =>{
     console.log(req.body)
     var {
         first_name,
@@ -71,27 +70,55 @@ exports.register = async (req, res, next) => {
             'messageClass': "alert-danger"
         })
     }
-
-    const user = await admin.auth().createUser({
+    return admin.auth().createUser({
         email,
         phone,
         password,
         disabled: true,
         displayName: `${first_name} ${last_name}`,
         photoURL: 'https://sevenadvancedacademy.com/themes/seven/assets/images/logo.png'
-    }).catch((error) => {
+    }).then((value)=>{
+        
+            const studentsRef = db.collection('students').doc();
+
+            var newStudent = new Student();
+            newStudent.id = studentsRef.id;
+            newStudent.email = email;
+            newStudent.phone = phone;
+            newStudent.first_name = first_name;
+            newStudent.matricule = matricule;
+            newStudent.last_name = last_name;
+            newStudent.photoUrl = 'https://sevenadvancedacademy.com/themes/seven/assets/images/logo.png';
+            newStudent.qrCodeUrl = "";
+
+            let setSf = studentsRef.set(JSON.parse(JSON.stringify(newStudent)));
+
+            return res.send("saved")
+
+    // }catch(error){
+        //     throw error;
+        //     return res.status(500).send(error);
+        // }
+    }).catch((error)=>{
         console.log(error);
         return res.render("register", {
             'message': 'An Error Occured',
             'messageClass': "alert-danger"
         })
-    }).then((value) => {
-        console.log(value)
-        return res.render('dashboard/student')
     });
+}
 
 
-
-
+exports.getStudentInfo = async (req, res)=>{
+    var matricule = req.params.matricule;
+   ///get matricule form datbase
+     let studentRef = await db.collection("students").doc(matricule).get();
+     console.log(studentRef)
+     var currentStudent = new Student();
+     if(studentRef.exists){
+       return  res.json(currentStudent.snapshotToJSON(studentRef));
+     }else{
+       return res.status(500).body(`${matricule} not found`)
+     }
 
 }

@@ -1,4 +1,3 @@
-require("firebase/auth");
 const firebase = require('firebase')
 const admin = require('firebase-admin')
 const serviceAccount = require("./firebase-permissions.json");

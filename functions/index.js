@@ -1,8 +1,5 @@
 const functions = require('firebase-functions');
-const {
-  firebase,
-  admin
-} = require('./env/firebase_config');
+
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
@@ -22,7 +19,7 @@ app.use(express.urlencoded({
 app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/', (req, res) => {
 
@@ -30,13 +27,11 @@ app.get('/', (req, res) => {
 });
 
 //Routers
-const studentRouter = require('./routes/studentRouter');
-const adminRouter = require('./routes/adminRouter');
 const regularRouter = require('./routes/regularRouter');
 
 
 app.use("/", regularRouter);
-app.use('/student', studentRouter);
+
 
 
 exports.app = functions.https.onRequest(app);

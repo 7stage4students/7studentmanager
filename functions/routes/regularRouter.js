@@ -16,7 +16,7 @@ router.post('/register', regularController.register);
 
 router.get("/signOut", regularController.signOut)
 
-
+router.get("/student/:matricule", regularController.getStudentInfo)
 
 
 module.exports = router;

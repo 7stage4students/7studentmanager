@@ -1,5 +1,5 @@
 {
-  "name": "7Attendance",
+  "name": "7attendance",
   "version": "1.0.0",
   "description": "This is an Attendance Statistics records website with an admin section and User section made in  ### Nodejs",
   "main": "index.js",
@@ -29,5 +29,9 @@
     "moment": "^2.27.0",
     "nodemon": "^2.0.4",
     "qrcode": "^1.4.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-plugin-promise": "^4.2.1"
   }
 }
