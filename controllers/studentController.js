@@ -62,10 +62,11 @@ exports.postLogin = (req,res,next) => {
         let profile = Student.get(isStudent.id)
         //Student Sucessfully Loged In
 
-        res.render('student_dashboard/student', {
+        res.render('student_Dashboard/student', {
               messageClass: 'alert-success'
+            });
 
-        res.render('student_dashboard/profile',{
+        res.render('student_Dashboard/profile',{
             name:profile.firstName+ " " + profile.lastName,
             email:profile.email,
             level:profile.level,
