@@ -3,17 +3,63 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/style.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <link rel="stylesheet" href="/css/login.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .global-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00ab9f;
+        }
+
+        form {
+            padding-top: 10px;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        .card-title {
+            font-weight: 300;
+        }
+
+        .btn {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+
+        .login-form {
+            width: 330px;
+            margin: 20px;
+        }
+
+        .sign-up {
+            text-align: center;
+            padding: 20px 0 0;
+        }
+
+        .alert {
+            margin-bottom: -30px;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+    </style>
 
 </head>
 
@@ -27,145 +73,39 @@
     <!-- Include the above in your HEAD tag -->
 
 
-<body>
-  <style>
-    html,body { 
-    height: 100%; 
-}
-
-.global-container{
-    height:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #00ab9f;
-}
-
-form{
-    padding-top: 10px;
-    font-size: 14px;
-    margin-top: 30px;
-}
-
-.card-title{ font-weight:300; }
-
-.btn{
-    font-size: 14px;
-    margin-top:20px;
-}
-
-
-.login-form{ 
-    width:330px;
-    margin:20px;
-}
-
-.sign-up{
-    text-align:center;
-    padding:20px 0 0;
-}
-
-.alert{
-    margin-bottom:-30px;
-    font-size: 13px;
-    margin-top:20px;
-}
-    </style>
-
+    {{> header}}
     <div class="global-container">
         <div class="card login-form">
-        <div class="card-body">
-            <h3 class="card-title text-center">Student Login</h3>
-            <div class="card-text">
-                <!--
+            <div class="card-body">
+                <h3 class="card-title text-center">Student Login</h3>
+                <div class="card-text">
+                    <!--
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
-                <form action="/students/login" method="POST">
-                 {{#if message}}
-            <div class="alert {{messageClass}}" role="alert">
-                {{message}}
-            </div>
-             {{/if}}
-                    <!-- to error: add class "has-danger" -->
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control form-control-sm" id="name" name="email" required>
-
-    <body>
-        <style>
-            html,
-            body {
-                height: 100%;
-            }
-
-            .global-container {
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: #00ab9f;
-            }
-
-            form {
-                padding-top: 10px;
-                font-size: 14px;
-                margin-top: 30px;
-            }
-
-            .card-title {
-                font-weight: 300;
-            }
-
-            .btn {
-                font-size: 14px;
-                margin-top: 20px;
-            }
-
-
-            .login-form {
-                width: 330px;
-                margin: 20px;
-            }
-
-            .sign-up {
-                text-align: center;
-                padding: 20px 0 0;
-            }
-
-            .alert {
-                margin-bottom: -30px;
-                font-size: 13px;
-                margin-top: 20px;
-            }
-        </style>
-        {{> header}}
-        <div class="global-container">
-            <div class="card login-form">
-                <div class="card-body">
-                    <h3 class="card-title text-center">Student Login</h3>
-                    <div class="card-text">
-                        <!--
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
-                        <form action="/students/login" method="POST">
-                            <!-- to error: add class "has-danger" -->
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input type="email" class="form-control form-control-sm" id="name" name="email"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <!-- <a href="#" style="float:right;font-size:12px;">Forgot password?</a> -->
-                                <input type="password" class="form-control form-control-sm" id="password"
-                                    name='password' required>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block" id="login">login</button>
-                        </form>
-                    </div>
+                    <form action="/students/login" method="POST">
+                        {{#if message}}
+                        <div class="alert {{messageClass}}" role="alert">
+                            {{message}}
+                        </div>
+                        {{/if}}
+                        <!-- to error: add class "has-danger" -->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control form-control-sm" id="name" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <!-- <a href="#" style="float:right;font-size:12px;">Forgot password?</a> -->
+                            <input type="password" class="form-control form-control-sm" id="password" name='password'
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="login">login</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        {{> footer}}
-    </body>
+    {{> footer}}
+</body>
 
 </html>

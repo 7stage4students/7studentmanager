@@ -125,28 +125,21 @@
 
   /* Container holding the image and the text */
 .contain {
+    width: 100%;
+    height: 100vh;
     position: relative;
     text-align: center;
     color: white;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
-   
-  }
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('../seven.jpg');
+    background-repeat: no-repeat;
+   background-size: cover;
+}
   /* Centered text */
 
   .arrange-text{
       font-weight: 900;
       font-size: 50px;
       color: white;
-  }
-
-  .home-overlay {
-      background-color: rgba(0,0,0,0.3);
-      width: 100%;;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 0.1;
   }
   .centered {
     position: absolute;
@@ -158,7 +151,7 @@
   .btn1 {
       background-color: steelblue;
       color: white;
-      margin-right: 50px;
+      /* margin-right: 50px; */
       font-size: 20px;
       margin-top: 40px;
       font-weight: 900;
@@ -167,10 +160,16 @@
   .btn2 {
     background-color: orange;
     color: white;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     font-size: 20px;
     margin-top: 40px;
     border-radius: 50px;
     font-weight: 900;
 }
 
+@media screen and (max-width: 990px){
+    .home-nav-item{
+        width: 7rem;
+        text-align: center;
+    }
+}
