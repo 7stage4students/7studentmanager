@@ -37,7 +37,7 @@ app.get('/admin/:course/:level', (req, res) => {
     res.write('hello')
     
 });
-///TODO check routers
+TODO check routers
 // app.use('/admin', adminManager);
 
 
