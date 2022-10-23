@@ -1,7 +1,7 @@
 const hashMethod = require('../utils/hash');
 const generateAuthToken = require('../utils/authToken')
 const jsonfile = require('jsonfile');
-const path = require('path');
+const path = require('path')
 
 
 const Student = require('../models/studentsModel');
