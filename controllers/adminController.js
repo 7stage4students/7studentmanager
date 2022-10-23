@@ -95,7 +95,7 @@ exports.postMarkAtendance = (req,res,next) => {
 
 
 
-// delete student  
+// Delete Student  
 exports.deleteStudent = (req,res,next) => {
     let studId = req.params.studId;
 
