@@ -1,4 +1,4 @@
 
 exports.getLogin = (req,res,next) => {
-    res.render('index')
+    res.render('index');
 }
